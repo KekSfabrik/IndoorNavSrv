@@ -32,7 +32,7 @@ public class SiteDaoTest extends TestCase {
     private static SiteDao sd = new SiteDao();
     
     /* exists in db */
-    private static Site testSite = new Site(1, "KekSfabrik - Lotharstrasse 1,  55116 Mainz");
+    private static Site testSite = new Site(1, "KekSfabrik");
 
     public SiteDaoTest(String testName) {
         super(testName);
