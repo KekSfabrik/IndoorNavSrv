@@ -41,7 +41,7 @@ public class LocationDaoTest extends TestCase {
     private static final String     tbWkb = "01010000A0E610000000000000000000000000000000000000000000000000F03F";
     private static final Beacon     testBeacon2 = new Beacon(10, "a0b137303a9a11e3aa6e0800200c9a66", 32895, 16028);
     private static final String     tb2Wkb = "01010000A0E6100000000000000000F03F000000000000F03F0000000000000040";
-    private static final Site       testSite = new Site(1, "KekSfabrik - Lotharstrasse 1,  55116 Mainz");
+    private static final Site       testSite = new Site(1, "KekSfabrik");
     private static final Location   testLocation = 
             new Location(
                 new LocationId(testBeacon.getId(), testSite.getSite()),
