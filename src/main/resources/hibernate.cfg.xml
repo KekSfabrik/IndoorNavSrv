@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.spatial.dialect.postgis.PostgisDialect</property>
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/IndoorNav</property>
+    <property name="hibernate.connection.username">yourDatabaseUsersUsername</property>
+    <property name="hibernate.connection.password">yourDatabaseUsersPassword</property>
+    <property name="hibernate.show_sql">false</property>
+    <property name="hibernate.format_sql">true</property>
+    <!-- JDBC connection pool (use the built-in) -->
+    <property name="connection.pool_size">50</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
+    <mapping resource="de/hsmainz/gi/indoornavsrv/Location.hbm.xml"/>
+    <mapping resource="de/hsmainz/gi/indoornavsrv/Beacon.hbm.xml"/>
+    <mapping resource="de/hsmainz/gi/indoornavsrv/Site.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

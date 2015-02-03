@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16.01.2015 12:45:14 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="de.hsmainz.gi.types.Site" optimistic-lock="version" schema="public" table="site">
+    <id name="site" type="int">
+      <column name="site"/>
+      <generator class="identity"/>
+    </id>
+    <property name="name" type="string">
+      <column name="name" not-null="true"/>
+    </property>
+    <!--<set name="locations" table="location" inverse="true" lazy="false" fetch="join">
+            <key>
+                <column name="site" not-null="true" />
+            </key>
+            <one-to-many class="de.hsmainz.gi.indoornavsrv.Location" />
+        </set>-->
+  </class>
+</hibernate-mapping>
