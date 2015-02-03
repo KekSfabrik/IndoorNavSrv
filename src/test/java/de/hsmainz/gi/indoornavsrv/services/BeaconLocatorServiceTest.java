@@ -39,7 +39,7 @@ import org.junit.Test;
 public class BeaconLocatorServiceTest extends TestCase {
     
     private static final Beacon     testBeacon = new Beacon(1, "00000000000000000000000000000000", 100, 12);
-    private static final Site       testSite = new Site(1, "KekSfabrik - Lotharstrasse 1,  55116 Mainz");
+    private static final Site       testSite = new Site(1, "KekSfabrik");
     private static final com.vividsolutions.jts.geom.Point testJtsPoint = new com.vividsolutions.jts.geom.GeometryFactory()
                         .createPoint(
                             new com.vividsolutions.jts.geom.Coordinate(
