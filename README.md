@@ -12,7 +12,7 @@ The "official" site for the project (including the scientific paper once finishe
 <a href="http://i3mainz.hs-mainz.de/de/studentenprojekt/indoor-positionsbestimmung-mit-hilfe-von-ibeacons">here</a>.
 
 ## DB Setup
-3 postgis tables should exist:
+3 postgresql/postgis tables should exist:
 ```
 CREATE TABLE public.beacon (
   id serial PRIMARY KEY,
@@ -41,3 +41,12 @@ CREATE TABLE public.location (
       ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 ```
+
+
+Additionally, in order to successfully finish the unit tests during build 3 entries should exist:
+```
+INSERT INTO public.site (site, name) VALUES (1, 'KekSfabrik');
+INSERT INTO public.beacon (id, uuid, major, minor) VALUES (1, '00000000000000000000000000000000', 100, 12);
+INSERT INTO public.location (site, beacon_id, coord) VALUES (1, 1, ST_GeomFromText('POINTZ(0 0 1)', 4326));
+```
+Maybe some changes still have to be made regarding the number of objects in each table..
