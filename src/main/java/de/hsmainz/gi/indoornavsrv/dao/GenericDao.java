@@ -35,6 +35,13 @@ import org.hibernate.cfg.Configuration;
  */
 public abstract class GenericDao<T, PK extends Serializable> implements IGenericDao<T, PK> {
 
+    private static final SessionFactory sessionFactory;
+    static {
+        Configuration configuration = new Configuration().configure();
+        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
+                .applySettings(configuration.getProperties());
+        sessionFactory = configuration.buildSessionFactory(builder.build());
+    }
     private Session     currentSession;
     private Transaction currentTransaction;
 
@@ -77,10 +84,6 @@ public abstract class GenericDao<T, PK extends Serializable> implements IGeneric
      * @return  the sessionfactory
      */
     private static SessionFactory getSessionFactory() {
-        Configuration configuration = new Configuration().configure();
-        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
-                .applySettings(configuration.getProperties());
-        SessionFactory sessionFactory = configuration.buildSessionFactory(builder.build());
         return sessionFactory;
     }
 

@@ -21,7 +21,6 @@ package de.hsmainz.gi.indoornavsrv.dao;
 import de.hsmainz.gi.types.Beacon;
 import de.hsmainz.gi.indoornavsrv.util.StringUtils;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import junit.framework.TestCase;
@@ -58,7 +57,7 @@ public class BeaconDaoTest extends TestCase {
      */
     public void testGetBeacons() {
         System.out.println("getBeacons");
-        int res = 9;
+        int res = 10;
         List<Beacon> result = bd.findAll();
         System.out.println("res.size=\t"+result.size());
         System.out.println("should be=\t"+res);

@@ -55,7 +55,7 @@ public class SiteDaoTest extends TestCase {
      */
     public void testGetSites() {
         System.out.println("getSites");
-        int res = 6;
+        int res = 7;
         List<Site> result = sd.findAll();
         System.out.println("res.size=\t" + result.size());
         System.out.println("should be=\t" + res);

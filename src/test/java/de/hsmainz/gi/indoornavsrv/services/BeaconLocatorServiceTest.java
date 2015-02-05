@@ -18,11 +18,8 @@
  */
 package de.hsmainz.gi.indoornavsrv.services;
 
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.GeometryFactory;
 import de.hsmainz.gi.types.WkbPoint;
 import de.hsmainz.gi.types.Beacon;
-import de.hsmainz.gi.types.Location;
 import de.hsmainz.gi.types.LocationId;
 import de.hsmainz.gi.types.Site;
 import de.hsmainz.gi.indoornavsrv.util.StringUtils;
@@ -208,7 +205,7 @@ public class BeaconLocatorServiceTest extends TestCase {
     @Test
     public void testGetSiteByApproximateName() {
         System.out.println("getSiteByApproximateName");
-        String name = "KekSfabrik";
+        String name = "KekS";
         BeaconLocatorService instance = new BeaconLocatorService();
         List<Site> expResult = Arrays.asList(new Site[]{ testSite });
         List<Site> result = instance.getSiteByApproximateName(name);

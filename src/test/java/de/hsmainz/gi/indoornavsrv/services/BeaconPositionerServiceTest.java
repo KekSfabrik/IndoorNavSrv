@@ -72,7 +72,7 @@ public class BeaconPositionerServiceTest extends TestCase {
         noIdBeacon.setMajor(0);
         noIdBeacon.setMinor(0);
         
-        noIdSite.setName("TESTSITE");
+        noIdSite.setName("TESTSITE1234");
         
         noIdLocation.setBeacon(noIdBeacon);
         noIdLocation.setSite(noIdSite);
