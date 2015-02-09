@@ -59,10 +59,12 @@ public class BeaconLocatorService implements IBeaconLocatorService {
             beacon = bd.find(beacon);
             bd.closeCurrentSession();
         }
-        ld.openCurrentSession();
         List<Site> sites = new ArrayList<>();
-        ld.findByBeacon(beacon).forEach(l -> sites.add(l.getSite()));
-        ld.closeCurrentSession();
+        if (beacon != null) {
+            ld.openCurrentSession();
+            ld.findByBeacon(beacon).forEach(l -> sites.add(l.getSite()));
+            ld.closeCurrentSession();
+        }
         return sites;
     }
 
@@ -127,10 +129,13 @@ public class BeaconLocatorService implements IBeaconLocatorService {
             site = sd.findByName(site.getName());
             sd.closeCurrentSession();
         }
-        ld.openCurrentSession();
-        WkbPoint point = new WkbPoint(ld.findById(new LocationId(site.getSite(), beacon.getId())).getCoord());
-        ld.closeCurrentSession();
-        return point;
+        if (beacon != null && site != null) {
+            ld.openCurrentSession();
+            WkbPoint point = new WkbPoint(ld.findById(new LocationId(site.getSite(), beacon.getId())).getCoord());
+            ld.closeCurrentSession();
+            return point;
+        }
+        return null;
     }
 
     @Override
@@ -140,12 +145,14 @@ public class BeaconLocatorService implements IBeaconLocatorService {
             site = sd.findByName(site.getName());
             sd.closeCurrentSession();
         }
-        ld.openCurrentSession();
         List<WkbLocation> locations = new ArrayList<>();
-        for (Location l : ld.findBySite(site)) {
-            locations.add(new WkbLocation(l));
+        if (site != null) {
+            ld.openCurrentSession();
+            for (Location l : ld.findBySite(site)) {
+                locations.add(new WkbLocation(l));
+            }
+            ld.closeCurrentSession();
         }
-        ld.closeCurrentSession();
         return locations;
     }
 
@@ -159,8 +166,10 @@ public class BeaconLocatorService implements IBeaconLocatorService {
                 if (b.getId() == 0) {
                     b = bd.find(b);
                 }
-                for (Location l : ld.findByBeacon(b)) {
-                    locations.add(new WkbLocation(l));
+                if (b != null) {
+                    for (Location l : ld.findByBeacon(b)) {
+                        locations.add(new WkbLocation(l));
+                    }
                 }
             }
         );
