@@ -29,6 +29,10 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 
 /**
+ * The LOCATOR WebService is meant to be accessible by anyone and only packs 
+ * access to READ functions. The publicly available functions can be accessed to
+ * allow navigation and positioning for everyone.
+ * 
  *
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>
  */

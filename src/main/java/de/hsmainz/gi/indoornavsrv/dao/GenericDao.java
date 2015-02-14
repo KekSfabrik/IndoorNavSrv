@@ -28,7 +28,10 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 /**
- *
+ * Abstract Class that implements the {@link de.hsmainz.gi.indoornavsrv.dao.IGenericDao}
+ * Interface and adds concrete implementations for the Transaction-Layer in the
+ * {@link de.hsmainz.gi.indoornavsrv.services}
+ * 
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">email</a>
  * @param <T> Type of the class
  * @param <PK> Type of the class' primary key

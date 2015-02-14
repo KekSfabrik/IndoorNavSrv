@@ -28,7 +28,11 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 
 /**
- *
+ * The POSITIONER WebService is meant to be available only to administrators with
+ * the privileges of writing to the Database. It enables adding/removing and 
+ * modification of Database entries.
+ * 
+ * 
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>
  */
 @WebService

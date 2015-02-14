@@ -33,7 +33,11 @@ import java.util.List;
 import javax.jws.WebService;
 
 /**
- *
+ * The concrete Implementation of the {@link de.hsmainz.gi.indoornavsrv.services.IBeaconLocatorService}
+ * Interface.
+ * 
+ * 
+ * 
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>, 18.01.2015
  */
 @WebService(
@@ -52,6 +56,9 @@ public class BeaconLocatorService implements IBeaconLocatorService {
         BeaconLocatorService.sd = new SiteDao();
     }
     
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Site> getSites(Beacon beacon) {
         if (beacon.getId() == 0) {
@@ -67,7 +74,10 @@ public class BeaconLocatorService implements IBeaconLocatorService {
         }
         return sites;
     }
-
+    
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Site> getSites(List<Beacon> beacons) {
         List<Site> sites = new ArrayList<>();
@@ -75,6 +85,9 @@ public class BeaconLocatorService implements IBeaconLocatorService {
         return sites;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Site getSite(String name) {
         sd.openCurrentSession();
@@ -83,6 +96,9 @@ public class BeaconLocatorService implements IBeaconLocatorService {
         return result;
     }
     
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Site> getSiteByApproximateName(String name) {
         sd.openCurrentSession();
@@ -91,6 +107,9 @@ public class BeaconLocatorService implements IBeaconLocatorService {
         return result;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Beacon getBeacon(String uuid, int major, int minor) {
         bd.openCurrentSession();
@@ -99,6 +118,9 @@ public class BeaconLocatorService implements IBeaconLocatorService {
         return result;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Beacon getBeacon(Beacon beacon) {
         if (beacon.getId() == 0) {
@@ -109,6 +131,9 @@ public class BeaconLocatorService implements IBeaconLocatorService {
         return beacon;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Beacon> getBeacons(List<Beacon> beacons) {
         bd.openCurrentSession();
@@ -117,6 +142,9 @@ public class BeaconLocatorService implements IBeaconLocatorService {
         return result;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public WkbPoint getCoordinate(Site site, Beacon beacon) {
         if (beacon.getId() == 0) {
@@ -138,6 +166,9 @@ public class BeaconLocatorService implements IBeaconLocatorService {
         return null;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<WkbLocation> getBeaconLocations(Site site) {
         if (site.getSite() == 0) {
@@ -156,6 +187,9 @@ public class BeaconLocatorService implements IBeaconLocatorService {
         return locations;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<WkbLocation> getBeaconLocations(List<Beacon> beacons) {
         ld.openCurrentSession();

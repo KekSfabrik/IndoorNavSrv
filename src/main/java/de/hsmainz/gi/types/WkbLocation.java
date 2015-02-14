@@ -24,6 +24,13 @@ import java.util.Objects;
 import javax.xml.bind.annotation.XmlType;
 
 /**
+ * A WkbLocation is the WebService Exchange typ of the persistent type 
+ * {@link de.hsmainz.gi.types.Location}: instead of a ({@link com.vividsolutions.jts.geom.Point})
+ * -coordinate it has a {@link de.hsmainz.gi.types.WkbPoint} representing the Point
+ * in "well-known binary" (WKB) String.
+ * 
+ * @version 1.0
+ * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>
  */
 @XmlType(
     name = "WkbLocation", 

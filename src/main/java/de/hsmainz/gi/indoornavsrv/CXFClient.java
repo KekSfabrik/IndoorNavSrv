@@ -23,6 +23,8 @@ import de.hsmainz.gi.indoornavsrv.services.IBeaconLocatorService;
 import de.hsmainz.gi.indoornavsrv.services.IBeaconPositionerService;
 import de.hsmainz.gi.indoornavsrv.services.security.ClientPasswordCallback;
 import de.hsmainz.gi.indoornavsrv.util.StringUtils;
+import de.hsmainz.gi.types.Location;
+import de.hsmainz.gi.types.LocationId;
 import de.hsmainz.gi.types.Site;
 import de.hsmainz.gi.types.WkbPoint;
 import java.util.ArrayList;
@@ -30,6 +32,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.endpoint.Endpoint;
 import org.apache.cxf.frontend.ClientProxy;
@@ -37,13 +40,20 @@ import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
+import org.apache.log4j.PropertyConfigurator;
 import org.apache.wss4j.dom.WSConstants;
 import org.apache.wss4j.dom.handler.WSHandlerConstants;
+//import org.apache.ws.security.WSConstants;
+//import org.apache.ws.security.handler.WSHandlerConstants;import org.slf4j.Logger;
 import org.slf4j.Logger;
 import org.slf4j.impl.Log4jLoggerFactory;
 
 /**
- *
+ * Startup Class for the WebServices Client. Allows for testing of the accompanying
+ * Server {@link de.hsmainz.gi.indoornavsrv.CXFServer}.
+ * 
+ * 
+ * 
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>,
  * 23.01.2015
  */
@@ -130,7 +140,7 @@ public class CXFClient {
         Map<String, Object> props = new HashMap<>();
         props.put(WSHandlerConstants.ACTION, WSHandlerConstants.USERNAME_TOKEN);
         // Specify our username
-        props.put(WSHandlerConstants.USER, "yourWebAppAdminUser");
+        props.put(WSHandlerConstants.USER, "indoornav-admin");
         // Password type : plain text
         props.put(WSHandlerConstants.PASSWORD_TYPE, WSConstants.PW_TEXT);
         // for hashed password use:

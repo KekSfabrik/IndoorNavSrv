@@ -26,21 +26,42 @@ import java.util.List;
 import org.hibernate.Query;
 
 /**
+ * DAO Class for the {@link de.hsmainz.gi.types.Location} Class.
+ * 
  *
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>
  */
 public class LocationDao extends GenericDao<Location, LocationId> {
     
+    /**
+     * Find the Location by the Primary Key.
+     * 
+     * @param   id  the LocationId of Beacon and Site
+     * @return  the Location of the Beacon at the Site
+     */
     public Location findById(LocationId id) {
         return this.findByID(Location.class, id);
     }
     
+    /**
+     * Find all Locations at a Site
+     * 
+     * @param   site    the Site to get Beacons and their coordinates at
+     * @return  all Locations at the given Site
+     */
     public List<Location> findBySite(Site site) {
         Query q = getCurrentSession().createQuery("from Location where site = :site");
         q.setInteger("site", site.getSite());
         return this.findMany(q);
     }
     
+    /**
+     * Find all Locations of a Beacon (Beacons can be in multiple Sites with 
+     * different Coordinates in the local System).
+     * 
+     * @param   beacon  the Beacon to find Locations of
+     * @return  all Locations of the given Beacon
+     */
     public List<Location> findByBeacon(Beacon beacon) {
         Query q = getCurrentSession().createQuery("from Location where beacon_id = :id");
         q.setInteger("id", beacon.getId());

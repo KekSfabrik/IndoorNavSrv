@@ -33,6 +33,11 @@ import org.slf4j.impl.Log4jLoggerFactory;
 //import org.apache.ws.security.WSSecurityException;
 
 /**
+ * The Callback handler for the {@link de.hsmainz.gi.indoornavsrv.CXFServer} 
+ * when password authenticaion is required (only neccessary for the positioning
+ * service {@link de.hsmainz.gi.indoornavsrv.services.BeaconPositionerService}.
+ * 
+ * 
  *
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>, 21.01.2015
  */

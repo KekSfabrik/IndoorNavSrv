@@ -19,9 +19,6 @@
 
 package de.hsmainz.gi.types;
 
-//import com.vividsolutions.jts.geom.Coordinate;
-//import com.vividsolutions.jts.geom.GeometryFactory;
-//import com.vividsolutions.jts.geom.PrecisionModel;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKBReader;
 import com.vividsolutions.jts.io.WKBWriter;
@@ -30,8 +27,13 @@ import java.util.Objects;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- *
- * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>, 29.01.2015
+ * A WkbPoint represents a {@link com.vividsolutions.jts.geom.Point} in Form of a
+ * "well-known binary" (WKB) Hex-String to allow marshalling and unmarshalling 
+ * to and from XML. It is a wrapper of sorts that is only used to bring Points to
+ * Clients.
+ * 
+ * @version 1.0
+ * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>
  */
 @XmlType(
     name = "WkbPoint", 
@@ -192,7 +194,11 @@ public class WkbPoint implements Serializable, Comparable, IndoorNavEntity {
         return wkb;
     }
 
-    
+    /**
+     * This function parses the local {@link #wkb} and generates a new Point - in
+     * case of failure a new <code>POINTZ(0 0 0)</code> is generated and returned.
+     * @return  a valid Point
+     */
     public com.vividsolutions.jts.geom.Point getPoint() {
         com.vividsolutions.jts.geom.Point point;
         try {

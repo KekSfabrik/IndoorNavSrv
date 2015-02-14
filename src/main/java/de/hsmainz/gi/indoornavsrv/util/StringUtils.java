@@ -31,6 +31,9 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
+ * Utility class that implements an alternative to {@link java.lang.Object#toString }
+ * that does not mess up XML marshalling or unmarshalling.
+ * 
  *
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>, 23.01.2015
  */

@@ -23,10 +23,13 @@ import java.util.List;
 import org.hibernate.Query;
 
 /**
- *
+ * The base interface for all DAO Classes: Minimum of neccessary functionality 
+ * all DAO Classes should implement.
+ * 
+ * 
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu"/>
  * @param   <T>     Type of the class
- * @param   <PK>    Type of the class' primary key
+ * @param   <PK>    Type of the primary key for the given class
  */
 public interface IGenericDao<T, PK extends Serializable> {
  

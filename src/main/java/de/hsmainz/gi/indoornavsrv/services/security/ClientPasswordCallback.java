@@ -26,13 +26,16 @@ import org.apache.wss4j.common.ext.WSPasswordCallback;
 //import org.apache.ws.security.WSPasswordCallback;
 
 /**
- *
+ * The Callback Handler for password requests made by the 
+ * {@link de.hsmainz.gi.indoornavsrv.CXFClient}.
+ * 
+ * 
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>, 21.01.2015
  */
 public final class ClientPasswordCallback implements CallbackHandler {
 
     //this can be moved to a resource bundle
-    private static final String password = "yourWebAppAdminPassword";
+    private static final String password = "73s962yV97C2Ei10zP9m4w13D9gh169S";
 
     public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
         WSPasswordCallback pc = (WSPasswordCallback) callbacks[0];

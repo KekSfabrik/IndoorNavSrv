@@ -20,7 +20,8 @@
 package de.hsmainz.gi.types;
 
 /**
- *
+ * The base Interface of all Persistence- and WebService-Exchange Entities.
+ * 
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>, 23.01.2015
  */
 public interface IndoorNavEntity {

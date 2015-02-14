@@ -35,7 +35,11 @@ import org.apache.wss4j.dom.handler.WSHandlerConstants;
 //import org.apache.ws.security.handler.WSHandlerConstants;
 
 /**
- *
+ * Startup Class for the CXFServer: Input arguments should be the hosts address
+ * abd port to bind the WebServices to or defaults to <code>localhost:8080</code>.
+ * 
+ * 
+ * 
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>,
  * 21.01.2015
  */

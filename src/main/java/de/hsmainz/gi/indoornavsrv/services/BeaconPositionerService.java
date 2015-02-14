@@ -32,6 +32,9 @@ import java.util.Objects;
 import javax.jws.WebService;
 
 /**
+ * The concrete Implementation of the {@link de.hsmainz.gi.indoornavsrv.services.IBeaconPositionerService}
+ * Interface.
+ * 
  *
  * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>, 21.01.2015
  */
@@ -51,7 +54,9 @@ public class BeaconPositionerService implements IBeaconPositionerService {
         BeaconPositionerService.sd = new SiteDao();
     }
     
-    
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean addSite(Site site) {
         sd.openCurrentSessionwithTransaction();
@@ -68,6 +73,9 @@ public class BeaconPositionerService implements IBeaconPositionerService {
         return res;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean addSite(String name) {
         sd.openCurrentSessionwithTransaction();
@@ -86,6 +94,9 @@ public class BeaconPositionerService implements IBeaconPositionerService {
         return res;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean deleteSite(Site site) {
         sd.openCurrentSessionwithTransaction();
@@ -100,6 +111,9 @@ public class BeaconPositionerService implements IBeaconPositionerService {
         return res;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean addBeacon(Beacon beacon) {
         bd.openCurrentSessionwithTransaction();
@@ -117,6 +131,9 @@ public class BeaconPositionerService implements IBeaconPositionerService {
         return res;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean addBeacon(String uuid, int major, int minor) {
         bd.openCurrentSessionwithTransaction();
@@ -139,6 +156,9 @@ public class BeaconPositionerService implements IBeaconPositionerService {
         return res;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean removeBeaconFromSite(Beacon beacon, Site site) {
         ld.openCurrentSessionwithTransaction();
@@ -158,6 +178,9 @@ public class BeaconPositionerService implements IBeaconPositionerService {
         return res;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean removeBeaconFromSite(WkbLocation location) {
         ld.openCurrentSessionwithTransaction();
@@ -172,6 +195,9 @@ public class BeaconPositionerService implements IBeaconPositionerService {
         return res;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean deleteBeacon(Beacon beacon) {
         bd.openCurrentSessionwithTransaction();
@@ -189,6 +215,9 @@ public class BeaconPositionerService implements IBeaconPositionerService {
         return res;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean placeBeacon(Site site, Beacon beacon, WkbPoint coordinate) {
         ld.openCurrentSessionwithTransaction();
@@ -210,6 +239,9 @@ public class BeaconPositionerService implements IBeaconPositionerService {
         return res;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean placeBeacon(WkbLocation location) {
         ld.openCurrentSessionwithTransaction();
@@ -232,6 +264,9 @@ public class BeaconPositionerService implements IBeaconPositionerService {
         return res;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean replaceBeacon(Site site, Beacon oldBeacon, Beacon newBeacon) {
         ld.openCurrentSessionwithTransaction();
@@ -256,6 +291,9 @@ public class BeaconPositionerService implements IBeaconPositionerService {
         return res;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean relocateBeacon(Site fromSite, Site toSite, Beacon beacon, WkbPoint toCoordinate) {
         ld.openCurrentSessionwithTransaction();
