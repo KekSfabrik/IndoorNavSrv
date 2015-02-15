@@ -27,7 +27,7 @@ import org.hibernate.Query;
  * all DAO Classes should implement.
  * 
  * 
- * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu"/>
+ * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>
  * @param   <T>     Type of the class
  * @param   <PK>    Type of the primary key for the given class
  */

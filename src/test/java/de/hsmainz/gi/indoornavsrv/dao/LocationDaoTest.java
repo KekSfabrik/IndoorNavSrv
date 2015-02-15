@@ -32,7 +32,7 @@ import junit.framework.TestCase;
 
 /**
  *
- * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu"/>
+ * @author Jan "KekS" M. <a href="mailto:keks@keksfabrik.eu">mail</a>
  */
 public class LocationDaoTest extends TestCase {
 

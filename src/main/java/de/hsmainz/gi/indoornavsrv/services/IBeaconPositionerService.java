@@ -50,7 +50,7 @@ public interface IBeaconPositionerService {
     );
     
     /**
-     * Wrapped call for {@link #addSite(de.hsmainz.gi.indoornavsrv.Site) } with
+     * Wrapped call for {@link #addSite(de.hsmainz.gi.indoornavsrv.types.Site) } with
      * the implication of a new {@link de.hsmainz.gi.types.Site}
      * being constructed before adding it to the System.
      * @param   name    the new Site's name
@@ -64,7 +64,7 @@ public interface IBeaconPositionerService {
     
     
     /**
-     * Unregister a {@link #addSite(de.hsmainz.gi.indoornavsrv.Site) } from the
+     * Unregister a {@link #addSite(de.hsmainz.gi.indoornavsrv.types.Site) } from the
      * System and delete it from the Database.
      * @param   site    the Site to remove
      * @return  whether the site was successfully deleted from the database
@@ -87,7 +87,7 @@ public interface IBeaconPositionerService {
     );
     
     /**
-     * wrapped call to {@link #addBeacon(de.hsmainz.gi.indoornavsrv.Beacon) }
+     * wrapped call to {@link #addBeacon(de.hsmainz.gi.indoornavsrv.types.Beacon) }
      * with a new new {@link de.hsmainz.gi.types.Beacon} being constructed
      * before registering with the System.
      * @param   uuid    the Beacons manufacturer uuid
