@@ -55,6 +55,7 @@ public final class ServerPasswordCallback implements CallbackHandler {
             props.load(new FileInputStream("user.properties"));
             username = props.get("admin.username").toString();
             password = props.get("admin.password").toString();
+            ClientPasswordCallback.setPassword(password);
         } catch (IOException ex) {
             L.error("Could not get Username and Password for Adminuser.", ex);
             username = null;

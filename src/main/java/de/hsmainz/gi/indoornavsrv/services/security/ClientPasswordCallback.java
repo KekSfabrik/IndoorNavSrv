@@ -35,8 +35,11 @@ import org.apache.wss4j.common.ext.WSPasswordCallback;
 public final class ClientPasswordCallback implements CallbackHandler {
 
     //this can be moved to a resource bundle
-    private static final String password = "73s962yV97C2Ei10zP9m4w13D9gh169S";
+    private static String password;
 
+    static void setPassword(String password) {
+        ClientPasswordCallback.password = password;
+    }
     public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
         WSPasswordCallback pc = (WSPasswordCallback) callbacks[0];
         // set the password for our message.

@@ -99,7 +99,7 @@ public class CXFClient {
         L.info("output\t" + Arrays.toString(StringUtils.listAll(realBeacons)));
         
         Beacon     testBeacon = new Beacon(1, "00000000000000000000000000000000", 100, 12);
-        Site       testSite = new Site(1, "KekSfabrik - Lotharstrasse 1,  55116 Mainz");
+        Site       testSite = new Site(1, "KekSfabrik");
         
         WkbPoint expResult = new WkbPoint(new com.vividsolutions.jts.geom.GeometryFactory()
                         .createPoint(
